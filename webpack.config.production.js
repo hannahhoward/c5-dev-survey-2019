@@ -23,7 +23,8 @@ module.exports = {
       compressor: {
         warnings: false
       }
-    })
+    }),
+    new webpack.IgnorePlugin(/\.\/canvas.js/)
   ],
   module: {
     loaders: [{
@@ -41,7 +42,12 @@ module.exports = {
       loader: "url-loader?limit=8192"
     }, {
       test: /\.svg$/,
-      loader: "url-loader?limit=10000&mimetype=image/svg+xml"
+      loader: "file-loader?mimetype=image/svg+xml",
+      include: path.join(__dirname, "assets")
     }]
+  },
+  resolve: {
+    // you can now require('file') instead of require('file.coffee')
+    extensions: ['.js', '.jsx', '.json']
   }
 };
