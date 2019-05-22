@@ -25,6 +25,7 @@ import ConceptSlide from './slideTemplates/concept-slide.jsx'
 import ImageSlide from './slideTemplates/image-slide.jsx'
 import DoubleImageSlide from './slideTemplates/double-image-slide.jsx'
 import QuotesSlide from './slideTemplates/quotes-slide.jsx'
+import SentimeterSlide from './slideTemplates/sentimeter-slide'
 import colors from './slideTemplates/colors'
 import CodeSlide from 'spectacle-code-slide'
 
@@ -62,98 +63,137 @@ export default class Presentation extends React.Component {
             </p>
           </Notes>
         </AboutMeSlide>
-        <DefinitionSlide
-          fit={false}
-          term="Apples"
-          definition="A Large Round Red Fruit"
-        >
-          <Notes>
-            Definition slides have a large heading and small, longer text below,
-            usually used to define term.
-            <br />
-            fit=false specifies if the heading gets scaled and stretched to fit
-            on a single line
-          </Notes>
-        </DefinitionSlide>
-
-        <ImageSlide
-          title="Pooh Beard"
-          image="poohbear.jpg"
-          text="Here is my dog"
-        >
-          <Notes>
-            Image slide displays an image with a heading above and regular size
-            text below <br />
-            Images should live in assets/images to be picked up here
-          </Notes>
-        </ImageSlide>
         <SimpleSlide
           inverted
-          fit={false}
-          statement="What is a computer program?"
+          statement={
+            <span>
+              Good
+              <br />
+              Morning
+            </span>
+          }
         >
+          <Notes>Good morning everyone. So I have a question...</Notes>
+        </SimpleSlide>
+        <ImageSlide
+          inverted
+          title={
+            <span>
+              What's hot with <br /> C5 devs right now?
+            </span>
+          }
+          image="mugatu.jpg"
+        />
+        <SimpleSlide inverted statement="But seriously...">
           <Notes>
-            <p>Simple slide is just a one line statement at heading size</p>
             <p>
-              <b>Note the `inverted` attribute</b>
+              Ok, so we're here at summit as a group, and we're in the same room
+              all day. At great cost in unbillable hours.
             </p>
             <p>
-              Inverted on any slide uses the dark color palette version -- I
-              usually use it once I'm in the main content of the talk
+              So if you're new here, I'd encourage you to use this day to it's
+              fullest. And I encourage you to think about these two questions
+              throughout the day.
             </p>
           </Notes>
         </SimpleSlide>
-        <QuoteSlide
-          quote="Fourscore and seven years ago"
-          cite="Abraham Lincoln"
-        >
-          <Notes>Quote slide is for quotations with an attribution</Notes>
-        </QuoteSlide>
         <ConceptSlide
+          inverted
           concept="Question 1"
-          description="What is the meaning of life?"
-        >
-          <Notes>
-            Concept slides are just the opposite of definition slides -- the
-            concept is normal text while the description is header text below
-          </Notes>
-        </ConceptSlide>
-        <CodeSlide
-          notes={
-            <div>
-              <p>
-                Code slides are for displaying code snippets, with a cool
-                animated, if somewhat finicky library
-              </p>
-            </div>
-          }
-          lang="c"
-          code={require('raw-loader!../assets/interrupt.c')}
-          ranges={[
-            { loc: [0, 5], title: 'In The Beginning... C!' },
-            { loc: [20, 28], note: 'Override the damn BIOS!' },
-            { loc: [10, 19], note: 'Interrupt Service Request Code' },
-            { loc: [35, 50], note: 'The main loop' },
-            { loc: [44, 47], note: 'Read from the buffer and update state!' },
-            { loc: [50, 58], note: 'Ctrl+C will not save you...' }
-          ]}
-        />
-        <ListSlide
-          ordered={false}
-          title="Observer Pattern vs Global Event Bus"
-          list={[
-            '(+) Way simpler than global event bus',
-            '(+) Localized scope',
-            '(-) Have To Setup Subscriptions'
-          ]}
+          description="What makes a C5 developer a C5 developer?"
         >
           <Notes>
             <p>
-              List slides are just an easy way to display an ordered or
-              unordered list, without all the business of ul/li tags
+              First, what is unique about a C5 developer? What are we into as a
+              company?
             </p>
           </Notes>
-        </ListSlide>
+        </ConceptSlide>
+        <ConceptSlide
+          inverted
+          concept="Question 2"
+          description="How do I become a better C5 developer?"
+        >
+          <Notes>
+            <p>
+              Second, this is basically a full day of pro-dev. SO while it's
+              probably tempting to tweet your way through boredom and a
+              hangover, my recommendation is that you use this day to think
+              about how you want to grow as a developer. You may not actually
+              learn everything today, but hopefully you figure out what you're
+              most interested in learning.
+            </p>
+          </Notes>
+        </ConceptSlide>
+        <ListSlide
+          inverted
+          appear={true}
+          title="Outline!"
+          ordered={true}
+          list={[
+            "What's this new tool and where did it come from?",
+            'Big learnings',
+            'Little learnings',
+            'Random funny things',
+            'How to learn more!'
+          ]}
+        />
+        <DefinitionSlide
+          fit={false}
+          term="Sentimeter"
+          definition="Every tool needs an origin story"
+        >
+          <Notes>
+            So before we dive in we want to tell you a little bit about the tool
+            we built to run the dev survey this year.
+          </Notes>
+        </DefinitionSlide>
+        <ImageSlide title="Nicole" image="nicole.png">
+          <Notes>
+            And to do that I want to turn it over to Nicole for a minute.
+          </Notes>
+        </ImageSlide>
+        <SimpleSlide statement="Key learnings">
+          <Notes>Zoe insert your stuff here</Notes>
+        </SimpleSlide>
+        <SentimeterSlide>
+          <Notes>
+            There are terrible hacks to make this work but look we can just have
+            a slide that brings up the live report - Just use SentimeterSlide
+            wherever you want to interact with the app
+          </Notes>
+        </SentimeterSlide>
+        <SimpleSlide statement="Other points of interest">
+          <Notes>Zoe insert other points of interest here</Notes>
+        </SimpleSlide>
+        <SimpleSlide statement="Some jokes">
+          <Notes>
+            something about block chain and angular maybe, maybe a few funny
+            quotes
+          </Notes>
+        </SimpleSlide>
+        <SimpleSlide
+          fit={false}
+          statement="How to make your own Sentimeters!"
+        />
+        <DefinitionSlide
+          inverted
+          term="http://sentimeter.carbonfive.com/surveys"
+          definition="Who knew it was that easy? (eek!)"
+        />
+        <DefinitionSlide
+          inverted
+          term="http://sentimeter.carbonfive.com/trends"
+          definition="Make your own trends"
+        />
+        <SimpleSlide inverted statement="#NoSecurity" />
+        <SimpleSlide inverted statement="JK. Auth Coming Soon" />
+        <ConceptSlide
+          inverted
+          concept="Get Involved"
+          description="#sentimeter on Slack"
+        />
+        <SimpleSlide statement="That's it!" />
       </Deck>
     )
   }
