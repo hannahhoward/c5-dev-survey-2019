@@ -156,6 +156,17 @@ export default class Presentation extends React.Component {
         <SimpleSlide statement="Key learnings">
           <Notes>Zoe insert your stuff here</Notes>
         </SimpleSlide>
+        <ImageSlide
+          inverted
+          title={
+            <span>
+              We're happy with our tried and true materials <br /> Thank you very much!<br />
+            </span>
+          }
+          image="sharon-mccutcheon-1051421-unsplash.jpg"
+        >
+          <Notes>Prettier, Agile, Shell, TypeScript, React, Pairing, Heroku, Ruby</Notes>
+        </ImageSlide>
         <SentimeterSlide>
           <Notes>
             There are terrible hacks to make this work but look we can just have
@@ -163,6 +174,56 @@ export default class Presentation extends React.Component {
             wherever you want to interact with the app
           </Notes>
         </SentimeterSlide>
+        <ImageSlide
+          inverted
+          title={
+            <span>
+              Awwww, poor Angular <br />
+            </span>
+          }
+          image="maria-teneva-1389817-unsplash.jpg"
+        />
+        <SentimeterSlide>
+          <Notes>
+            There are terrible hacks to make this work but look we can just have
+            a slide that brings up the live report - Just use SentimeterSlide
+            wherever you want to interact with the app
+          </Notes>
+        </SentimeterSlide>
+        <ImageSlide
+          inverted
+          title={
+            <span>
+              Enthusiasm, but a steep learning curves <br />
+            </span>
+          }
+          image="o-TIANMEN-MOUNTAIN-570.jpg"
+        >
+          <Notes>
+            Rust, Systems Programming, Machine Learning, WebAssembly, GraphQL, Flutter and Dart, Serverless
+          </Notes>
+        </ImageSlide>
+        <SentimeterSlide>
+          <Notes>
+            There are terrible hacks to make this work but look we can just have
+            a slide that brings up the live report - Just use SentimeterSlide
+            wherever you want to interact with the app
+          </Notes>
+        </SentimeterSlide>
+        <ImageSlide
+          inverted
+          title={
+            <span>
+              Remote teams <br />
+            </span>
+          }
+          image="becca-tapert-391581-unsplash.jpg"
+        >
+          <Notes>
+            Increasing competence, but not a ton of enthusiasm
+          </Notes>
+        </ImageSlide>
+
         <SimpleSlide statement="Other points of interest">
           <Notes>Zoe insert other points of interest here</Notes>
         </SimpleSlide>
